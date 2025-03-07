@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <title>Chúc mừng 8/3</title>
+    <script src="main.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("anh/anh-8-3-didongviet-5.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 10px;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            animation: fadeIn 1.5s ease;
+            text-align: center;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: slideIn 1.2s ease;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 90vw;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .letter-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            z-index: 10;
+        }
+
+        .letter {
+            width: 90vw;
+            max-width: 400px;
+            background-color: #f1c1a3;
+            border-radius: 15px;
+            padding: 20px;
+            transform: scaleY(0);
+            transform-origin: top;
+            overflow: hidden;
+            transition: transform 0.8s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+        }
+
+        .letter.open {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        .letter-content {
+            font-size: 1rem;
+            color: #333;
+            display: none;
+        }
+
+        .letter.open .letter-content {
+            display: block;
+        }
+
+        .letter-toggle-button {
+            position: absolute;
+            top: 250px;
+            padding: 12px 40px;
+            font-size: 1rem;
+            background-color: #f50612;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .letter-toggle-button:hover {
+            background-color: #ed240e;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-effect">
+        <div class="image-container">
+            <img src="anh/Nhung-hinh-anh-y-nghia-ngay-8-3-hinh-anh-ngay-8-3-1-1551754883-width601height406.webp">
+        </div>
+    </div>
+
+    <div class="letter-container">
+        <div class="letter" id="letter">
+           <p class="letter-content">
+               Chúc mọi người có một ngày lễ thật vui vẻ và thật hạnh phúc.<br>
+               Chúc bạn luôn thành công và luôn xinh đẹp!
+           </p>
+        </div>
+        <button class="letter-toggle-button" id="letter-toggle-button">Mở ra</button>
+    </div>
+
+    <script>
+        document.getElementById("letter-toggle-button").addEventListener("click", function() {
+            var letter = document.getElementById("letter");
+            letter.classList.toggle("open");
+        });
+    </script>
+</body>
+</html>
