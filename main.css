@@ -37,18 +37,6 @@
         padding: 10px;
     }
 }
- body {
-    height: 100vh; /* Đảm bảo toàn bộ trang chiếm đủ màn hình */
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Ngăn thanh cuộn */
-}
 
-.container {
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Căn giữa nội dung */
-}
 
 
