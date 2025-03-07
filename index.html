@@ -7,82 +7,86 @@
     <title>Chúc mừng 8/3</title>
     <script src="main.js" defer></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: url("anh/anh-8-3-didongviet-5.jpg") no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-            padding: 10px;
-        }
-
         .glass-effect {
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(5px);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            animation: fadeIn 1.5s ease;
-            text-align: center;
-        }
+              background: rgba(255, 255, 255, 0.3);
+              backdrop-filter: blur(5px);
+              border-radius: 15px;
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+              padding: 20px;
+              width: 100%;
+              max-width: 1200px;
+              margin: 20px auto;
+              animation: fadeIn 1.5s ease;
+          }
+          .title {
+              text-align: center;
+              font-size: 2rem;
+              font-weight: bold;
+              margin-top: 100px;
+              animation: slideIn 1.2s ease;
+              color: #fff;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+          }
+    
+          .image-container {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 20px;
+              margin-top: 20px;
+          }
+            
+          .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Nếu muốn căn giữa theo cả chiều dọc */
+}
 
-        .title {
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            animation: slideIn 1.2s ease;
-        }
-
-        .image-container img {
-            width: 100%;
-            max-width: 90vw;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .letter-container {
+          body{
+                  font-family: Arial, sans-serif;
+                  background: url("anh/anh-8-3-didongviet-5.jpg") no-repeat center center fixed;
+                  background-size: 100% auto;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100vh;
+                  overflow-x: hidden;
+          }
+          .letter-container {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 20px;
-            z-index: 10;
+            z-index: 10; /* Đảm bảo phần tử này không bị che khuất */
         }
 
         .letter {
-            width: 90vw;
-            max-width: 400px;
+            width: 450px;
+            height: 300px;
             background-color: #f1c1a3;
             border-radius: 15px;
             padding: 20px;
             transform: scaleY(0);
             transform-origin: top;
             overflow: hidden;
-            transition: transform 0.8s ease;
+            transition: transform 1s ease;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            opacity: 0;
+            opacity: 0; /* Khởi tạo độ mờ */
         }
 
         .letter.open {
-            transform: scaleY(1);
-            opacity: 1;
+            transform: scaleY(1); /* Mở lá thư */
+            opacity: 1; /* Đảm bảo lá thư hiển thị rõ */
         }
 
         .letter-content {
-            font-size: 1rem;
+            font-size: 1.0rem;
             color: #333;
             display: none;
         }
@@ -93,9 +97,8 @@
 
         .letter-toggle-button {
             position: absolute;
-            top: 250px;
-            padding: 12px 40px;
-            font-size: 1rem;
+            top: 275px;
+            padding: 15px 50px;
             background-color: #f50612;
             color: white;
             border: none;
@@ -107,40 +110,60 @@
         .letter-toggle-button:hover {
             background-color: #ed240e;
         }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         @keyframes slideIn {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
     <div class="glass-effect">
         <div class="image-container">
-            <img src="anh/Nhung-hinh-anh-y-nghia-ngay-8-3-hinh-anh-ngay-8-3-1-1551754883-width601height406.webp">
+            <div style="text-align: center";>
+                <img src="anh/Nhung-hinh-anh-y-nghia-ngay-8-3-hinh-anh-ngay-8-3-1-1551754883-width601height406.webp" width="500">
+            </div>  
         </div>
     </div>
-
     <div class="letter-container">
         <div class="letter" id="letter">
            <p class="letter-content">
-               Chúc mọi người có một ngày lễ thật vui vẻ và thật hạnh phúc.<br>
-               Chúc bạn luôn thành công và luôn xinh đẹp!
+            Chúc mọi người có một ngày lễ thật vui vẻ và thật hạnh phúc<br>
+                Thật thành công và luôn xinh đẹp . 
            </p>
         </div>
         <button class="letter-toggle-button" id="letter-toggle-button">Mở ra</button>
     </div>
-
-    <script>
-        document.getElementById("letter-toggle-button").addEventListener("click", function() {
-            var letter = document.getElementById("letter");
-            letter.classList.toggle("open");
-        });
-    </script>
 </body>
 </html>
