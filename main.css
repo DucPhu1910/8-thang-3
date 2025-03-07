@@ -75,5 +75,13 @@ body {
     background-size: cover; /* Đảm bảo hình nền phủ toàn bộ màn hình */
     background-position: center;
 }
-
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Đảm bảo nền phủ toàn bộ chiều cao màn hình */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Tránh thanh cuộn ngang nếu có */
+}
 
