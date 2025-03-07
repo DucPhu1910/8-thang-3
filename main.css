@@ -3,3 +3,31 @@
     justify-content: center;
     align-items: center; 
 }
+@media (max-width: 768px) {
+    .glass-effect {
+        width: 90%; /* Điều chỉnh chiều rộng */
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 1.5rem; /* Giảm kích thước tiêu đề */
+        margin-top: 50px;
+    }
+
+    .image-container img {
+        width: 100%; /* Để hình ảnh tự co giãn */
+        max-width: 400px;
+    }
+
+    .letter {
+        width: 90%; /* Giảm kích thước lá thư */
+        height: auto;
+        padding: 15px;
+    }
+
+    .letter-toggle-button {
+        width: 80%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
